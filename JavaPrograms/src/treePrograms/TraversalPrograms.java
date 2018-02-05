@@ -53,28 +53,20 @@ public class TraversalPrograms {
 		st.push(root);
 		TreeNode prev = null;
 		while(!st.isEmpty()){
-			TreeNode curr = st.pop();
+			TreeNode curr = st.peek();
 			if(prev == null || prev.left == curr || prev.right == curr){
-				System.out.println("n\n>>>>>>>>00000000000000>>>>>>"+curr.data);
 				if(curr.left!=null){
 					st.push(curr.left);
-					System.out.println("n\n>>>>>>>>11111111>>>>>>"+curr.data);
 				}else if(curr.right!=null){
 					st.push(curr.right);
-					System.out.println("n\n>>>>>>>>22222222>>>>>>"+curr.data);
 				}
-				System.out.println("n\n>>>>>>>>33333333>>>>>>"+curr.data);
 			}else if(curr.left == prev){
 				if(curr.right!=null){
 					st.push(curr.right);
-					System.out.println("n\n>>>>>>>>444444>>>>>>"+curr.data);
 				}
-				System.out.println("n\n>>>>>>>>55555555555>>>>>>"+curr.data);
 			}else{
-				System.out.println("n\n>>>>>>>>66666666>>>>>>"+curr.data);
 				list.add(curr.data);
 				st.pop();
-				System.out.println("n\n>>>>>>>>777777777>>>>>>"+curr.data);
 			}
 			prev = curr;
 		}
