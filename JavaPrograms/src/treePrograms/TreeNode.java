@@ -7,7 +7,8 @@ public class TreeNode {
 		data = key;
 		left = right = null;
 	}
-	
+	TreeNode(){
+	}
 	public static TreeNode getTree(){
 		TreeNode node = new TreeNode(1);
 		node.left = new TreeNode(2);
