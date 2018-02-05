@@ -1,8 +1,10 @@
 package treePrograms;
 
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class TraversalPrograms {
 
@@ -73,12 +75,39 @@ public class TraversalPrograms {
 		return list;
 	}
 	
+	public List levelOrder(TreeNode root) {
+		List list = new ArrayList();
+		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+		queue.add(root);
+		while(true){
+			int nodeCount = queue.size();
+			if(nodeCount == 0) {
+				break;
+			}
+			
+			while(nodeCount>0) {
+				TreeNode curr = queue.peek();
+				list.add(curr.data);
+				queue.remove();
+				if(curr.left!=null) {
+					queue.add(curr.left);
+				}
+				if(curr.right!=null) {
+					queue.add(curr.right);
+				}
+				nodeCount--;
+			}
+		}
+		return list;
+	}
+	
 	public static void main(String[] args) {
 		TraversalPrograms tp = new TraversalPrograms();
 		TreeNode tn = TreeNode.getTree();
 		System.out.println("\n\n>>>>>>preOrder>>>>>>>>>>"+tp.preOrder(tn));
 		System.out.println("\n\n>>>>>>inorder>>>>>>>>>>"+tp.inOrder(tn));
 		System.out.println("\n\n>>>>>>postOrder>>>>>>>>>>"+tp.postOrder(tn));
+		System.out.println("\n\n>>>>>>levelOrder>>>>>>>>>>"+tp.levelOrder(tn));
 	}
 
 }
