@@ -28,6 +28,25 @@ public class TraversalProgramWithRecursion {
 		postOrder(root.right);
 		System.out.print(root.data+" ");
 	}
+	
+	public void levelOrder(TreeNode root) {
+		int h = new HeightOfTree().heightOfTree(root);
+		for(int i=1;i<=h;i++) {
+			printGivenLevel1(root,i);
+		}
+		
+	}
+	public void printGivenLevel1(TreeNode root, int level) {
+		if(root == null) {
+			return;
+		}
+		if(level == 1) {
+			System.out.print(root.data+" ");
+		}else {
+			printGivenLevel1(root.left, level-1);
+			printGivenLevel1(root.right, level-1);
+		}
+	}
 	public static void main(String[] args) {
 		TreeNode tn = new TreeNode().getTree();
 		TraversalProgramWithRecursion tpwr = new TraversalProgramWithRecursion();
@@ -36,6 +55,8 @@ public class TraversalProgramWithRecursion {
 		tpwr.inOrder(tn);
 		System.out.println();
 		tpwr.postOrder(tn);
+		System.out.println();
+		tpwr.levelOrder(tn);
 	}
 
 }
