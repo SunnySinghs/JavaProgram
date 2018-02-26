@@ -32,19 +32,19 @@ public class TraversalProgramWithRecursion {
 	public void levelOrder(TreeNode root) {
 		int h = new HeightOfTree().heightOfTree(root);
 		for(int i=1;i<=h;i++) {
-			printGivenLevel1(root,i);
+			printGivenLevel(root,i);
 		}
 		
 	}
-	public void printGivenLevel1(TreeNode root, int level) {
+	public void printGivenLevel(TreeNode root, int level) {
 		if(root == null) {
 			return;
 		}
 		if(level == 1) {
 			System.out.print(root.data+" ");
 		}else {
-			printGivenLevel1(root.left, level-1);
-			printGivenLevel1(root.right, level-1);
+			printGivenLevel(root.left, level-1);
+			printGivenLevel(root.right, level-1);
 		}
 	}
 	public static void main(String[] args) {
