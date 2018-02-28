@@ -1,7 +1,8 @@
 package treePrograms;
 
 public class ConstructTreeFromInordePreorder {
-
+	static int preIndex = 0;
+	
 	public static void main(String[] args) {
 		ConstructTreeFromInordePreorder tree = new ConstructTreeFromInordePreorder();
 		int in[] = new int[]{4, 2, 5, 1, 6, 3};
@@ -14,21 +15,30 @@ public class ConstructTreeFromInordePreorder {
 	}
 	
 	TreeNode buildTree(int[] pre, int[] in,int start,int end){
-		TreeNode node;
-		int preIndex = 0;
+
 		if(end < start){
 			return null;
 		}
-		
+		System.out.println("\n\n>>preIndex>>"+preIndex);
 		TreeNode tNode = new TreeNode(pre[preIndex++]);
 		
+		System.out.println("\n\n>>>start>>>>>"+start);
+		System.out.println("\n\n>>>end>>>>>"+end);
+		System.out.println("\n\n>>data>>>"+tNode.data);
 		if(start == end){
 			return tNode;
 		}
-		
+
 		int index = search(in, start, end, tNode.data);
-		
+		System.out.println("\n\n>>>index>>"+index);
+
+		System.out.println("\n\n>>>left>>>");
+		System.out.println("\n\n>>>start>>>>>"+start);
+		System.out.println("\n\n>>>end>>>>>"+(index-1));
 		tNode.left = buildTree(pre, in, start, index-1);
+		System.out.println("\n\n>>>right>>>");
+		System.out.println("\n\n>>>start>>>>>"+(index+1));
+		System.out.println("\n\n>>>end>>>>>"+end);
 		tNode.right = buildTree(pre, in, index+1, end);
 		return tNode;
 	}

@@ -13,13 +13,10 @@ public class BoundaryTraversalOfTree {
 	
 	void printLeftBoundary(TreeNode node) {
 		if(node!=null) {
-			//System.out.println("node data "+node.data);
 			if(node.left!=null) {
-				//System.out.println("111");
-				//System.out.println(node.data+" ");
+				System.out.println(node.data+" ");
 				printLeftBoundary(node.left);
 			}else if(node.right!=null) {
-				//System.out.println("222");
 				System.out.println(node.data+" ");
 				printLeftBoundary(node.right);
 			}
