@@ -1,4 +1,4 @@
-package treePrograms;
+package binaryTreePrograms;
 
 public class BoundaryTraversalOfTree {
 	void printLeaves(TreeNode node) {
