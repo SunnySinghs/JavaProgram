@@ -10,6 +10,10 @@ public class InsertBST {
 
 	}
 	Node root;
+	Node insertRec(int value) {
+		root = null;
+		return insertInBST(root, value);
+	}
 	Node insertInBST(Node root, int value) {
 		if(root == null) {
 			root = new Node(value);
