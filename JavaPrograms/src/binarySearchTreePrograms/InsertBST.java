@@ -5,7 +5,6 @@ import binaryTreePrograms.TraversalProgramWithRecursion;
 public class InsertBST {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Node node = new InsertBST().insertInBST(new Node().getTree(), 8);
 		new InsertBST().preOrder(node);
 
