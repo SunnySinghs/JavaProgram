@@ -7,7 +7,6 @@ public class QueueFromStack {
 	static class Queue{
 		Stack<Integer> s1;
 		Stack<Integer> s2;
-		
 	}
 	
 	static void push(Stack<Integer> st, int item) {
@@ -40,8 +39,7 @@ public class QueueFromStack {
 			}
 		}
 		return q.s2.pop();
-	}
-	
+	}	
 	public static void main(String[] args) {
 		Queue q= new Queue();
         q.s1 = new Stack<>();
