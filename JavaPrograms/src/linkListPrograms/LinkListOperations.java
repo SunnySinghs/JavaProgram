@@ -7,7 +7,8 @@ public class LinkListOperations {
 		int data;
 		Node next;
 		Node(int n){
-			this.data = n;
+			data = n;
+			next = null;
 		}
 	}
 	void insert(int data) {
@@ -16,9 +17,9 @@ public class LinkListOperations {
 		head = node;
 	}
 	
-	void insertAfter(Node prev_node, int data) {
+	void insertafter(Node prev_node, int data) {
 		if(prev_node == null) {
-			System.out.println("Previous node can't be null");
+			System.out.println("previous node can't be null");
 			return;
 		}
 		Node node = new Node(data);
@@ -40,29 +41,40 @@ public class LinkListOperations {
 		return;
 	}
 	
-	void printList() {
+	void printlist() {
 		Node node = head;
-		while(node.next!=null) {
-			System.out.println(node.data+" ");
+		while(node!=null) {
+			System.out.print(node.data+" ");
+			node = node.next;
 		}
+	}
+	
+	void deleteNode(int key) {
+		Node temp = head, prev = null; 
+		if(temp!=null && temp.data==key) {
+			head = temp.next;
+			return;
+		}
+		while(temp!=null && temp.data != key) {
+			prev = temp;
+			temp = temp.next;
+		}
+		
+		if(temp == null) return;
+		
+		prev.next = temp.next;
+		
 	}
 	
 	public static void main(String[] args) {
 		LinkListOperations llist = new LinkListOperations();
-		 
         llist.append(6);
- 
         llist.insert(7);
- 
         llist.insert(1);
- 
         llist.append(4);
- 
-        llist.insertAfter(llist.head.next, 8);
- 
-        System.out.println("\nCreated Linked list is: ");
-        llist.printList();
-
+        llist.insertafter(llist.head.next, 8);
+        llist.deleteNode(4);
+        System.out.println("\ncreated linked list is: ");
+        llist.printlist();
 	}
-
 }
