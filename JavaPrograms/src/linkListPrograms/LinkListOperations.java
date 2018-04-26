@@ -66,14 +66,57 @@ public class LinkListOperations {
 		
 	}
 	
+	void deleteNodeAtGivenPosition(int pos) {
+		Node temp = head, prev = null;
+		if(pos == 0) {
+			head = temp.next;
+			return;
+		}
+		for(int i = 0; temp!=null && i<pos; i++) {
+			prev = temp;
+			temp = temp.next;
+		}
+		if(temp == null) return;
+		prev.next = temp.next;
+	}
+	
+	void deleteNodeAtLatOccurence(int key) {
+		Node temp = head, x=null;
+		while(temp!=null) {
+			if(temp!=null && temp.data == key) {
+				x = temp;
+			}
+			temp = temp.next;
+		}
+		if(x!=null && x.next!=null) {
+			x.data = x.next.data;
+			x.next = x.next.next;
+		}else {
+			Node node = head;
+			while(node.next!=x) {
+				node = node.next;
+			}
+			node.next = null;
+		}
+	}
+	
 	public static void main(String[] args) {
 		LinkListOperations llist = new LinkListOperations();
         llist.append(6);
         llist.insert(7);
         llist.insert(1);
+        llist.append(1);
         llist.append(4);
         llist.insertafter(llist.head.next, 8);
+        System.out.println("\ncreated linked list is: ");
+        llist.printlist();
         llist.deleteNode(4);
+        System.out.println("\ncreated linked list is: ");
+        llist.printlist();
+        llist.deleteNodeAtGivenPosition(2);
+        System.out.println("\ncreated linked list is: ");
+        llist.printlist();
+        llist.deleteNodeAtLatOccurence(1);
         System.out.println("\ncreated linked list is: ");
         llist.printlist();
 	}
