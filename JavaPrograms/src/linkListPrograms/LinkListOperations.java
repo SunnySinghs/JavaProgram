@@ -80,7 +80,7 @@ public class LinkListOperations {
 		prev.next = temp.next;
 	}
 	
-	void deleteNodeAtLatOccurence(int key) {
+	void deleteNodeAtLastOccurence(int key) {
 		Node temp = head, x=null;
 		while(temp!=null) {
 			if(temp!=null && temp.data == key) {
@@ -105,7 +105,7 @@ public class LinkListOperations {
         llist.append(6);
         llist.insert(7);
         llist.insert(1);
-        llist.append(1);
+        //llist.append(1);
         llist.append(4);
         llist.insertafter(llist.head.next, 8);
         System.out.println("\ncreated linked list is: ");
@@ -116,7 +116,7 @@ public class LinkListOperations {
         llist.deleteNodeAtGivenPosition(2);
         System.out.println("\ncreated linked list is: ");
         llist.printlist();
-        llist.deleteNodeAtLatOccurence(1);
+        llist.deleteNodeAtLastOccurence(1);
         System.out.println("\ncreated linked list is: ");
         llist.printlist();
 	}
