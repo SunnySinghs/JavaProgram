@@ -28,8 +28,8 @@ public class DLL {
 		temp.next = prevNode.next;
 		temp.prev = prevNode;
 		prevNode.next = temp;
-		if(prevNode.next!=null) {
-			prevNode.next.prev = temp;
+		if(temp.next!=null) {
+			temp.next.prev = temp;
 		}
 	}
 	
@@ -58,9 +58,26 @@ public class DLL {
 			node = node.next;
 		}
 		System.out.println();
-		while(last!=null) {
+		/*while(last!=null) {
 			System.out.print(last.data+" ");
 			last = last.prev;
+		}*/
+	}
+	
+	public void deleteNode(Node del) {
+		if(head == null || del == null) {
+			return;
+		}
+		if(head == del) {
+			head = del.next;
+		}
+		
+		if(del.next!=null) {
+			del.next.prev = del.prev;
+		}
+		
+		if(del.prev!=null) {
+			del.prev.next = del.next;
 		}
 	}
 	
@@ -72,6 +89,15 @@ public class DLL {
         dll.insertEnd(4);
         dll.insertAfter(dll.head.next, 8);
         System.out.println("Created DLL is: ");
+        dll.print(dll.head);
+        dll.deleteNode(dll.head);
+        System.out.println("Created DLL is 1: ");
+        dll.print(dll.head);
+        dll.deleteNode(dll.head.next);
+        System.out.println("Created DLL is 2: ");
+        dll.print(dll.head);
+        dll.deleteNode(dll.head.next.next);
+        System.out.println("Created DLL is 3: ");
         dll.print(dll.head);
 	}
 }
