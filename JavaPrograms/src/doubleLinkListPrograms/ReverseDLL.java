@@ -18,11 +18,11 @@ public class ReverseDLL {
 	
 	public static void reverseDLL(DLL dll) {
 		Node current = dll.head, temp = null;
-		if(current!=null) {
+		while(current!=null) {
 			temp = current.prev;
 			current.prev = current.next;
 			current.next = temp;
-			current = current.next;
+			current = current.prev;
 		}
 		if(temp!=null) {
 			dll.head = temp.prev;
