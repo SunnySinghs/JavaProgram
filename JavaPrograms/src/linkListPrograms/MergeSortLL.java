@@ -6,21 +6,21 @@ public class MergeSortLL {
 	Node head;
 	public static void main(String[] args) {
 		MergeSortLL li = new MergeSortLL();
-        li.push(15);
-        li.push(10);
-        li.push(5);
-        li.push(20);
-        li.push(3);
-        li.push(2);
-        System.out.println("Linked List without sorting is :");
-        li.print(li.head);
- try {
-        li.head = li.mergeSort(li.head);
- }catch (Exception e) {
-	 e.printStackTrace();
-}
-        System.out.print("\n Sorted Linked List is: \n");
-        li.print(li.head);
+		li.push(15);
+		li.push(10);
+		li.push(5);
+		li.push(20);
+		li.push(3);
+		li.push(2);
+		System.out.println("Linked List without sorting is :");
+		li.print(li.head);
+		try {
+			li.head = li.mergeSort(li.head);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.print("\n Sorted Linked List is: \n");
+		li.print(li.head);
 
 	}
 	
@@ -40,8 +40,10 @@ public class MergeSortLL {
 		while(left!=null && right!=null) {
 			if(left.data<right.data) {
 				temp.next = left;
+				left = left.next;
 			}else {
 				temp.next = right;
+				right = right.next;
 			}
 			temp = temp.next;
 		}
