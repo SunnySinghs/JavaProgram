@@ -8,6 +8,8 @@ public class Node {
 		this.data = data;
 		this.next = this.random = null;
 	}
+	public Node() {
+	}
 	Node getLastNode(Node temp) {
 		if(temp==null) {
 			return null;
