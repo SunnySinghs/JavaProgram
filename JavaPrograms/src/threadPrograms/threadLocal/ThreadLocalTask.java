@@ -1,4 +1,4 @@
-package threadPrograms;
+package threadPrograms.threadLocal;
 
 import java.util.Date;
 
