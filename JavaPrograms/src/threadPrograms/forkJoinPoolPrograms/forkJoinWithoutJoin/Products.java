@@ -1,4 +1,4 @@
-package threadPrograms.ForkJoinPoolPrograms;
+package threadPrograms.forkJoinPoolPrograms.forkJoinWithoutJoin;
 
 public class Products {
 

@@ -1,4 +1,4 @@
-package threadPrograms.ForkJoinPoolPrograms;
+package threadPrograms.forkJoinPoolPrograms.forkJoinWithoutJoin;
 
 import java.util.List;
 import java.util.concurrent.RecursiveAction;
@@ -10,7 +10,7 @@ public class Task extends RecursiveAction {
 	private double increment;
 	private List<Products> products;
 	
-	public Task(int first, int last, double increment, List<threadPrograms.ForkJoinPoolPrograms.Products> products) {
+	public Task(int first, int last, double increment, List<threadPrograms.forkJoinPoolPrograms.forkJoinWithoutJoin.Products> products) {
 		this.first = first;
 		this.last = last;
 		this.increment = increment;
