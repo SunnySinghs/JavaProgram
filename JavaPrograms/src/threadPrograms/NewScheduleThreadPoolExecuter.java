@@ -6,7 +6,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-public class newScheduleThreadPoolExecuter {
+public class NewScheduleThreadPoolExecuter {
 
 	public static void main(String[] args) {
 		ScheduledExecutorService exec = Executors.newScheduledThreadPool(2);

@@ -1,4 +1,4 @@
-package threadPrograms.ForkJoinPoolPrograms.ForkJoinPoolCancelTask;
+package threadPrograms.forkJoinPoolPrograms.forkJoinPoolCancelTask;
 
 import java.util.ArrayList;
 import java.util.List;

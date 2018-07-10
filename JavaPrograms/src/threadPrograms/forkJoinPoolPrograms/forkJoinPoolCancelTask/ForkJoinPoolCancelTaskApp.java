@@ -1,4 +1,4 @@
-package threadPrograms.ForkJoinPoolPrograms.ForkJoinPoolCancelTask;
+package threadPrograms.forkJoinPoolPrograms.forkJoinPoolCancelTask;
 
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
